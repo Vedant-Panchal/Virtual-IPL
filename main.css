@@ -90,6 +90,7 @@
     background-size: cover !important;
     background-image: url(https://cdn.cbeditz.com/cbeditz/preview/cricket-ipl-stadium-cb-picsart-editing-background-hd-download-11649407194zo6kss6fkx.webp) !important;
     background-repeat: no-repeat;
+    padding: 1.5em;
 }
 #page-4
 {
@@ -166,7 +167,7 @@
 }
 #input
 {
-    width: 40%;
+    width: max-content;
     border-radius: 15px !important;
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px !important;
     color: #000;
@@ -190,6 +191,11 @@
 #searchButton,#searchButton:focus,#searchButton:active{
     border: none !important;
     box-shadow: none !important;
+}
+
+.funds-left{
+    color: #03BBF9 !important;
+    font-style: italic;
 }
 @keyframes navbarAnimation {
     0% {
