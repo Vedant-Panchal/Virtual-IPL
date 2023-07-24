@@ -35,7 +35,12 @@
     transition: all 300ms linear !important;
     scroll-behavior: smooth !important;
 }
-
+*::-moz-selection,*::selection{
+    color: #000000;
+    text-shadow: none;
+    background-color: #00ffdd7b;
+    
+}
 .cabin
 {
     font-family: var(--font-1);
