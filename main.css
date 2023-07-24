@@ -82,6 +82,13 @@
     background-image: url(https://www.oyorooms.com/travel-guide/wp-content/uploads/2023/03/Hosts-of-IPL-2023.jpg) !important;
     background-repeat: no-repeat;
 }
+#page-3
+{
+    background-position: center;
+    background-size: cover !important;
+    background-image: url(https://m.economictimes.com/thumb/msid-99136139,width-1600,height-900,resizemode-4,imgsize-66426/ipl-2023-schedule.jpg) !important;
+    background-repeat: no-repeat;
+}
 #card-design
 {
 
