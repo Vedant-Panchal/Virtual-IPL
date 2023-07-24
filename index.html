@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Virtual IPL 23</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- <link rel="stylesheet" href="debug.css"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+  <body>
+    <nav class="navbar is-fixed-top navbar-animated" id="navbar">
+        <div class="columns is-mobile is-marginless">
+          <div class="is-one-fifth column" style="width: 100px;">
+            <figure style="height: 50px;width: 50px;" id="logo">
+              <img src="assets/pratyagraLogo.jpg">
+            </figure>
+          </div>
+          <div class="column is-four-fifths">
+            <p class="is-size-3 is-bold is-mobile" style="color:#ffffff;font-weight: 700;" id="title">PRATYAGRA'23</p>
+          </div>
+        </div>
+    </nav>
+        <section class="hero is-fullheight herobg">
+            <!-- Hero head -->
+                
+                <!-- Hero head -->
+
+                <!-- hero body -->
+                <header class="hero-body">
+                    <div class="is-overlay has-text-centered" style="top: 200px;">
+                    <h1 class="title has-text-white is-justify-content-center" id="winner" style="font-size: 7rem;" >Dhoop Prajapati's <br>WINNER!!</h1>
+                    <h2 class="subtitle has-text-white" id="tagline">Your dream team, no longer a dream!</h1>
+                    </div>
+                </header>
+                <!-- hero body -->
+        </section>
+        <section class="hero is-fullheight has-text-centered is-transparent" id="page-2">
+                <div class="hero-body is-flex-direction-column is-justify-content-space-around is-align-items-center" style="gap: 2em;">
+                  <div>
+                    <p class="title cabin has-text-white">
+                        TEAMS
+                    </p>
+                    <p class="subtitle lora has-text-white">
+                      Inspect teams and their budgets
+                    </p>
+                  </div>
+                  <div class="columns is-multiline is-flex is-justify-content-center is-align-items-center">
+                  <!-- Card Starts -->
+                  <!-- Card 1 -->
+                  <div class="column card is-one-third" id="card-design" style="margin: 5px 10px;">
+                    <header class="card-header is-flex is-justify-content-space-between is-align-items-center" id="card-header">
+                      <p class="card-header-title" id="card-title">
+                        <span class="team-name">Team:1</span>
+                      </p>
+                      <p class="has-text-right funds-left">
+                        Funds Left: $100,000
+                      </p>
+                    </header>
+                    <div class="card-content">
+                      <div class="content is-flex-direction-columnd">
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                        <p><strong id="card-body">Batsmen Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="batsmen-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="batsmen-dropdown" role="menu">
+                              <div class="dropdown-content" >
+                                <a href="#" class="dropdown-item">Batsman 1</a>
+                                <a href="#" class="dropdown-item">Batsman 2</a>
+                                <!-- Add more bought batsmen here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                          <p><strong id="card-body">Bowlers Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="bowlers-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="bowlers-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Bowler 1</a>
+                                <a href="#" class="dropdown-item">Bowler 2</a>
+                                <!-- Add more bought bowlers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;">
+                          <p><strong id="card-body">Wicket Keeper Bought:</strong></p>
+                          <div class="dropdown is-right is-up">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="wicket-keeper-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="wicket-keeper-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Wicket Keeper 1</a>
+                                <!-- Add more bought wicket keepers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Card 2 -->
+                  <div class="column card is-one-third" id="card-design" style="margin: 5px 10px;">
+                    <header class="card-header is-flex is-justify-content-space-between is-align-items-center" id="card-header">
+                      <p class="card-header-title" id="card-title">
+                        <span class="team-name">Team:2</span>
+                      </p>
+                      <p class="has-text-right funds-left">
+                        Funds Left: $100,000
+                      </p>
+                    </header>
+                    <div class="card-content">
+                      <div class="content is-flex-direction-column">
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                          <p><strong id="card-body">Batsmen Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="batsmen-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="batsmen-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Batsman 1</a>
+                                <a href="#" class="dropdown-item">Batsman 2</a>
+                                <!-- Add more bought batsmen here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                          <p><strong id="card-body">Bowlers Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="bowlers-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="bowlers-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Bowler 1</a>
+                                <a href="#" class="dropdown-item">Bowler 2</a>
+                                <!-- Add more bought bowlers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;">
+                          <p><strong id="card-body">Wicket Keeper Bought:</strong></p>
+                          <div class="dropdown is-right is-up">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="wicket-keeper-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="wicket-keeper-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Wicket Keeper 1</a>
+                                <!-- Add more bought wicket keepers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Card 3 -->
+                  <div class="column card is-one-third" id="card-design" style="margin: 5px 10px;">
+                    <header class="card-header is-flex is-justify-content-space-between is-align-items-center" id="card-header">
+                      <p class="card-header-title" id="card-title">
+                        <span class="team-name">Team:3</span>
+                      </p>
+                      <p class="has-text-right funds-left">
+                        Funds Left: $100,000
+                      </p>
+                    </header>
+                    <div class="card-content">
+                      <div class="content is-flex-direction-column">
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                          <p><strong id="card-body">Batsmen Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="batsmen-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="batsmen-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Batsman 1</a>
+                                <a href="#" class="dropdown-item">Batsman 2</a>
+                                <!-- Add more bought batsmen here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                          <p><strong id="card-body">Bowlers Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="bowlers-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="bowlers-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Bowler 1</a>
+                                <a href="#" class="dropdown-item">Bowler 2</a>
+                                <!-- Add more bought bowlers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;">
+                          <p><strong id="card-body">Wicket Keeper Bought:</strong></p>
+                          <div class="dropdown is-right is-up">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="wicket-keeper-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="wicket-keeper-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Wicket Keeper 1</a>
+                                <!-- Add more bought wicket keepers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Card 4 -->
+                  <div class="column card is-one-third" id="card-design" style="margin: 5px 10px;">
+                    <header class="card-header is-flex is-justify-content-space-between is-align-items-center" id="card-header">
+                      <p class="card-header-title" id="card-title">
+                        <span class="team-name">Team:4</span>
+                      </p>
+                      <p class="has-text-right funds-left">
+                        Funds Left: $100,000
+                      </p>
+                    </header>
+                    <div class="card-content">
+                      <div class="content is-flex-direction-column">
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                          <p><strong id="card-body">Batsmen Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="batsmen-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="batsmen-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Batsman 1</a>
+                                <a href="#" class="dropdown-item">Batsman 2</a>
+                                <!-- Add more bought batsmen here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                          <p><strong id="card-body">Bowlers Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="bowlers-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="bowlers-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Bowler 1</a>
+                                <a href="#" class="dropdown-item">Bowler 2</a>
+                                <!-- Add more bought bowlers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;">
+                          <p><strong id="card-body">Wicket Keeper Bought:</strong></p>
+                          <div class="dropdown is-right is-up">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="wicket-keeper-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="wicket-keeper-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Wicket Keeper 1</a>
+                                <!-- Add more bought wicket keepers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Card 5 -->
+                  <div class="column card is-one-third" id="card-design" style="margin: 5px 10px;">
+                    <header class="card-header is-flex is-justify-content-space-between is-align-items-center" id="card-header">
+                      <p class="card-header-title" id="card-title">
+                        <span class="team-name">Team:5</span>
+                      </p>
+                      <p class="has-text-right funds-left">
+                        Funds Left: $100,000
+                      </p>
+                    </header>
+                    <div class="card-content">
+                      <div class="content is-flex-direction-column">
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                          <p><strong id="card-body">Batsmen Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="batsmen-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="batsmen-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Batsman 1</a>
+                                <a href="#" class="dropdown-item">Batsman 2</a>
+                                <!-- Add more bought batsmen here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                          <p><strong id="card-body">Bowlers Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="bowlers-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="bowlers-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Bowler 1</a>
+                                <a href="#" class="dropdown-item">Bowler 2</a>
+                                <!-- Add more bought bowlers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;">
+                          <p><strong id="card-body">Wicket Keeper Bought:</strong></p>
+                          <div class="dropdown is-right is-up">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="wicket-keeper-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="wicket-keeper-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Wicket Keeper 1</a>
+                                <!-- Add more bought wicket keepers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Card 6 -->
+                  <div class="column card is-one-third" id="card-design" style="margin: 5px 10px;">
+                    <header class="card-header is-flex is-justify-content-space-between is-align-items-center" id="card-header">
+                      <p class="card-header-title" id="card-title">
+                        <span class="team-name">Team:6</span>
+                      </p>
+                      <p class="has-text-right funds-left">
+                        Funds Left: $100,000
+                      </p>
+                    </header>
+                    <div class="card-content">
+                      <div class="content is-flex-direction-column">
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                          <p><strong id="card-body">Batsmen Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="batsmen-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="batsmen-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Batsman 1</a>
+                                <a href="#" class="dropdown-item">Batsman 2</a>
+                                <!-- Add more bought batsmen here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                          <p><strong id="card-body">Bowlers Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="bowlers-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="bowlers-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Bowler 1</a>
+                                <a href="#" class="dropdown-item">Bowler 2</a>
+                                <!-- Add more bought bowlers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;">
+                          <p><strong id="card-body">Wicket Keeper Bought:</strong></p>
+                          <div class="dropdown is-right is-up">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="wicket-keeper-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="wicket-keeper-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Wicket Keeper 1</a>
+                                <!-- Add more bought wicket keepers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Card 7 -->
+                  <div class="column card is-one-third" id="card-design" style="margin: 5px 10px;">
+                    <header class="card-header is-flex is-justify-content-space-between is-align-items-center" id="card-header">
+                      <p class="card-header-title" id="card-title">
+                        <span class="team-name">Team:7</span>
+                      </p>
+                      <p class="funds-left has-text-right">
+                        Funds Left: $100,000
+                      </p>
+                    </header>
+                    <div class="card-content">
+                      <div class="content is-flex-direction-column">
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                          <p><strong id="card-body">Batsmen Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="batsmen-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="batsmen-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Batsman 1</a>
+                                <a href="#" class="dropdown-item">Batsman 2</a>
+                                <!-- Add more bought batsmen here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                          <p><strong id="card-body">Bowlers Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="bowlers-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="bowlers-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Bowler 1</a>
+                                <a href="#" class="dropdown-item">Bowler 2</a>
+                                <!-- Add more bought bowlers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;">
+                          <p><strong id="card-body">Wicket Keeper Bought:</strong></p>
+                          <div class="dropdown is-right is-up">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="wicket-keeper-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="wicket-keeper-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Wicket Keeper 1</a>
+                                <!-- Add more bought wicket keepers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Card 8 -->
+                  <div class="column card is-one-third" id="card-design" style="margin: 5px 10px;">
+                    <header class="card-header is-flex is-justify-content-space-between is-align-items-center" id="card-header">
+                      <p class="card-header-title" id="card-title">
+                        <span class="team-name">Team:8</span>
+                      </p>
+                      <p class="has-text-right funds-left">
+                        Funds Left: $100,000
+                      </p>
+                    </header>
+                    <div class="card-content">
+                      <div class="content is-flex-direction-column">
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                          <p><strong id="card-body">Batsmen Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="batsmen-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="batsmen-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Batsman 1</a>
+                                <a href="#" class="dropdown-item">Batsman 2</a>
+                                <!-- Add more bought batsmen here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;margin-bottom: 1em;">
+                          <p><strong id="card-body">Bowlers Bought:</strong></p>
+                          <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="bowlers-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="bowlers-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Bowler 1</a>
+                                <a href="#" class="dropdown-item">Bowler 2</a>
+                                <!-- Add more bought bowlers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-space-between" style="gap: 10px;">
+                          <p><strong id="card-body">Wicket Keeper Bought:</strong></p>
+                          <div class="dropdown is-right is-up">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="wicket-keeper-dropdown">
+                                <span>View</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="wicket-keeper-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Wicket Keeper 1</a>
+                                <!-- Add more bought wicket keepers here -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+        </section>
+        <section class="hero is-success is-fullheight">
+                <div class="hero-body">
+                    <div class="dropdown">
+                        <div class="dropdown-trigger">
+                          <button class="button" aria-haspopup="true" aria-controls="dropdown-ui-actions">
+                            <span>Actions</span>
+                            <span class="icon is-small">
+                              <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-ui-actions" role="menu">
+                          <div class="dropdown-content">
+                            <a href="#" class="dropdown-item">
+                              Option 1
+                            </a>
+                            <a href="#" class="dropdown-item">
+                              Option 2
+                            </a>
+                            <a href="#" class="dropdown-item">
+                              Option 3
+                            </a>
+                          </div>
+                        </div>
+                </div>
+        </section>
+  </body>
+  <!-------------------------->
+  <!--Drop Down Script-->
+  <!------------------------>
+  <script>
+    // Get all dropdowns on the page that aren't hoverable.
+const dropdowns = document.querySelectorAll('.dropdown:not(.is-hoverable)');
+
+if (dropdowns.length > 0) {
+  // For each dropdown, add event handler to open on click.
+  dropdowns.forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      el.classList.toggle('is-active');
+    });
+  });
+
+  // If user clicks outside dropdown, close it.
+  document.addEventListener('click', function(e) {
+    closeDropdowns();
+  });
+}
+
+/*
+ * Close dropdowns by removing `is-active` class.
+ */
+function closeDropdowns() {
+  dropdowns.forEach(function(el) {
+    el.classList.remove('is-active');
+  });
+}
+
+// Close dropdowns if ESC pressed
+document.addEventListener('keydown', function (event) {
+  let e = event || window.event;
+  if (e.key === 'Esc' || e.key === 'Escape') {
+    closeDropdowns();
+  }
+});
+  </script>
+  <script>
+    // Get the navbar element
+    const navbar = document.querySelector('#navbar');
+
+    // Function to handle the scroll event
+    function handleScroll() {
+        // Get the current scroll position
+        const scrollY = window.scrollY;
+
+        // Set a threshold value to determine when to add/remove the .navbar-animated class
+        const threshold = 300; // Adjust this value based on your design preference
+
+        // Check if the user has scrolled beyond the threshold
+        if (scrollY > threshold) {
+            navbar.classList.add('navbar-animated');
+        } else {
+            navbar.classList.remove('navbar-animated');
+        }
+    }
+
+    // Attach the handleScroll function to the scroll event
+    window.addEventListener('scroll', handleScroll);
+</script>
+<script>
+    function toggleDropdown(dropdownId) {
+      const dropdown = document.getElementById(dropdownId);
+      dropdown.classList.toggle('is-active');
+    }
+  </script>
+
+  
+</html>

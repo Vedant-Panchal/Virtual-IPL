@@ -1,0 +1,143 @@
+/*----------------------*/
+/*Helpers*/
+/*----------------------*/
+.center, .center-column, .top, .right, .bottom, .left {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.center-column {
+    flex-direction: column;
+}
+
+.top    { align-items:     flex-start; }
+.right  { justify-content: flex-end;   }
+.bottom { align-items:     flex-end;   }
+.left   { justify-content: flex-start; }
+
+.single-spaced, .single-spaced * {
+    line-height: 1;
+}
+
+@media (max-width: 1024px) {
+	.desktop {
+		display: none;
+	}
+}
+:root{
+    --font-1:"Cabin","Helvetica Neue",Helvetica,Arial,sans-serif;
+    --font-2:"Lora","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+*{
+    font-family: "Cabin","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.cabin
+{
+    font-family: var(--font-1);
+}
+.lora
+{
+    font-family: var(--font-2);
+}
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+.herobg{
+
+    background-image: url(assets/intro-bg.jpg);
+    background-position: center;
+    background-size:cover;
+    filter:contrast(1.1);
+    opacity: 1;  
+}
+
+#tagline
+{
+    font-family: "Lora","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+#navbar
+{
+    background-color: rgba(255, 255, 255, 0);
+    transition: all 500ms ease-in-out;
+
+}
+
+#card-header
+{
+    box-shadow: none !important;
+}
+#card-title{
+    font-size: 1.5em !important;
+    color: white !important;
+    font-style: italic;
+}
+#card-body{
+    color: white !important;
+}
+#page-2
+{
+    background-position: center;
+    background-size: cover !important;
+    background-image: url(https://www.oyorooms.com/travel-guide/wp-content/uploads/2023/03/Hosts-of-IPL-2023.jpg) !important;
+    background-repeat: no-repeat;
+}
+#card-design
+{
+
+    background: rgba(255, 255, 255, 0.15)  !important;
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )  !important;
+backdrop-filter: blur( 12px )  !important;
+-webkit-backdrop-filter: blur( 12px )  !important;
+border-radius: 10px !important;
+border: 1px solid rgba( 255, 255, 255, 0.18 )   !important;
+color: white !important;
+}
+@keyframes navbarAnimation {
+    0% {
+        background-color: rgba(255, 255, 255, 0);
+        opacity: 0;
+        /* transform: translateY(-50px); */
+    }
+
+    100% {
+        background-color: #000;
+        opacity: 1;
+        text-shadow: 0px 0px 30px #03BBF9;
+        border-bottom: 1px solid rgb(255, 255, 255);
+    }
+}
+/* Add the animation class that will trigger the animation */
+.navbar-animated {
+    animation: navbarAnimation 500ms ease-out 0s 1 normal forwards;
+    /* 'animation' property format: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction animation-fill-mode; */
+}
+
+@media only screen and (max-width: 600px) {
+    .herobg{
+        background-image: url(assets/ipl-bg-mobile.jpg);
+        background-position: center center;
+        background-size: cover;   
+        background-repeat: no-repeat;
+    }
+    #title
+    {
+        font-size: 35px !important;
+    }
+    #logo
+    {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    #winner
+    {
+        font-size: 4.5rem !important;
+    }
+    #page-2
+    {
+        background-position: center !important;
+        background-size: cover !important;
+        background-image: url(https://4.bp.blogspot.com/-F6aZF5PMwBQ/Wrj5h204qxI/AAAAAAAABao/4QLn48RP3x0P8Ry0CcktxilJqRfv1IfcACLcBGAs/s1600/GURU%2BEDITZ%2Bbackground.jpg) !important;
+        background-repeat: no-repeat;
+    }
+}
