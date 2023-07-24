@@ -32,6 +32,8 @@
 
 *{
     font-family: "Cabin","Helvetica Neue",Helvetica,Arial,sans-serif;
+    transition: all 300ms linear !important;
+    scroll-behavior: smooth !important;
 }
 
 .cabin
@@ -81,7 +83,6 @@
     background-size: cover !important;
     background-image: url(https://www.oyorooms.com/travel-guide/wp-content/uploads/2023/03/Hosts-of-IPL-2023.jpg) !important;
     background-repeat: no-repeat;
-    filter:contrast(0.9);
 }
 #page-3
 {
@@ -115,11 +116,15 @@
 }
 
 #instagramBtn:hover,#instagramBtn:active {
-    color: #feee61 !important;
+    text-decoration-color: #feee61 !important;
     background-color: #000000 !important;
     transform: translate(5px, 5px) !important;
     box-shadow: none !important;
     transition: all 300ms linear !important;
+}
+#instagramBtn:hover>.instalink,#instagramBtn:active>.instalink{
+    transition: all 300ms linear !important;
+    color: #feee61!important;
 }
 .insta-card-design{
     box-sizing: border-box;
@@ -182,7 +187,7 @@
     {
         background-position: center !important;
         background-size: cover !important;
-        background-image: url(https://i.pinimg.com/1200x/a3/31/f6/a331f66aec50280defa6deaa34d29240.jpg) !important;
+        background-image: url(https://4.bp.blogspot.com/-F6aZF5PMwBQ/Wrj5h204qxI/AAAAAAAABao/4QLn48RP3x0P8Ry0CcktxilJqRfv1IfcACLcBGAs/s1600/GURU%2BEDITZ%2Bbackground.jpg) !important;
         background-repeat: no-repeat;
     }
     
