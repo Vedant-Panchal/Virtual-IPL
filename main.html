@@ -34,7 +34,7 @@
     <section class="hero is-fullheight herobg">
         <header class="hero-body">
             <div class="is-overlay has-text-centered" style="top: 200px;">
-                <h1 class="subtitle has-text-white" id="tagline">Your dream team, no longer a dream!</h1>
+                <h1 class="subtitle has-text-white is-size-1" id="tagline">Your dream team, no longer a dream!</h1>
             </div>
         </header>
     </section>
@@ -52,7 +52,9 @@
                     Inspect teams and their budgets
                 </p>
             </div>
-            <div class="team-group" style="overflow-x: scroll;"> 
+
+            
+            <div class="team-group columns is-multiline is-mobile is-flex is-justify-content-space-evenly" id="card-design" style="overflow-x: scroll;"> 
                 
             </div>
         </div>
@@ -287,29 +289,29 @@
 <!--Drop Down Script-->
 <!------------------------>
 
-<!-- <script> -->
+<script>
     // Get the navbar element
-    // const navbar = document.querySelector('#navbar');
+    const navbar = document.querySelector('#navbar');
 
-    // // Function to handle the scroll event
-    // function handleScroll() {
-    //     // Get the current scroll position
-    //     const scrollY = window.scrollY;
+    // Function to handle the scroll event
+    function handleScroll() {
+        // Get the current scroll position
+        const scrollY = window.scrollY;
 
-    //     // Set a threshold value to determine when to add/remove the .navbar-animated class
-    //     const threshold = 300; // Adjust this value based on your design preference
+        // Set a threshold value to determine when to add/remove the .navbar-animated class
+        const threshold = 300; // Adjust this value based on your design preference
 
-    //     // Check if the user has scrolled beyond the threshold
-    //     if (scrollY > threshold) {
-    //         navbar.classList.add('navbar-animated');
-    //     } else {
-    //         navbar.classList.remove('navbar-animated');
-    //     }
-    // }
+        // Check if the user has scrolled beyond the threshold
+        if (scrollY > threshold) {
+            navbar.classList.add('navbar-animated');
+        } else {
+            navbar.classList.remove('navbar-animated');
+        }
+    }
 
-    // // Attach the handleScroll function to the scroll event
-    // window.addEventListener('scroll', handleScroll);
-<!-- </script> -->
+    // Attach the handleScroll function to the scroll event
+    window.addEventListener('scroll', handleScroll);
+</script>
 
 <script defer src="main.js"></script>
 
