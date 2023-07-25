@@ -1,4 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // menu mobile devices
+  const customMenuButton = document.querySelector('.custom-menu-button');
+  const menu = document.getElementById('navbarMenu');
+
+  // Function to close the menu
+  const closeMenu = () => {
+    customMenuButton.classList.remove('is-active');
+    menu.classList.remove('is-active');
+  };
+
+  // Toggle the menu when the custom menu button is clicked
+  customMenuButton.addEventListener('click', () => {
+    customMenuButton.classList.toggle('is-active');
+    menu.classList.toggle('is-active');
+
+    // Show the close button with "X" when the menu is opened
+    const closeButton = document.getElementById('closeButton');
+    closeButton.style.display = menu.classList.contains('is-active') ? 'block' : 'none';
+  });
+
+  // Close the menu when the close button is clicked
+  const closeButton = document.getElementById('closeButton');
+  closeButton.addEventListener('click', () => {
+    closeMenu();
+  });
+
+  // Close the menu when the user clicks outside the menu or custom menu button
+  document.addEventListener('click', (event) => {
+    const isMenuClicked = event.target.closest('.navbar-menu');
+    const isButtonClicked = event.target.closest('.custom-menu-button');
+    if (!isMenuClicked && !isButtonClicked) {
+      closeMenu();
+    }
+  });
+
+  // Close the menu when the user clicks the back button
+  window.addEventListener('popstate', () => {
+    closeMenu();
+  });
+  
+  
+  // end of mobile menu
   const teamGroupElement = document.querySelector('.team-group');
   let teamData;
   let playerData;
@@ -8,7 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       teamData.forEach((team, index) => {
           const teamContainer = document.createElement('div');
-          teamContainer.classList.add('team-container');
+          teamContainer.classList.add('column');
+          teamContainer.classList.add('card');
+          teamContainer.classList.add('is-one-quarter-desktop');
+          teamContainer.setAttribute('id', 'card-design');
+          teamContainer.setAttribute('style', 'margin: 5px 5px;');
 
           const totalPlayerPrice = team.batsmen.reduce((sum, player) => sum + parsePrice(player.playerPrice), 0)
           + team.bowlers.reduce((sum, player) => sum + parsePrice(player.playerPrice), 0)
@@ -27,61 +73,100 @@ document.addEventListener('DOMContentLoaded', () => {
           const teamName = isDisqualified ? `${team.teamName} (disqualified)` : team.teamName;
 
           teamContainer.innerHTML = `
-              <div class="teamInfo" id="team-${index + 1}">
-                  <div class="teamName" id="team${index + 1}Name">
-                      <h2>${teamName}</h2>
-                      <div class="teamFunds" id="team${index + 1}Fund">
-                          <h2>${team.teamFunds} Rs</h2>
-                      </div>
-                  </div>
-                  <div class="Players">
-                      <div class="batsman" id="team${index + 1}Batsman">
-                          <h3>Batsman</h3>
-                          <ul>
-                              ${team.batsmen.map(player => `
-                                  <li class="player">
-                                      <span class="playerName">${player.playerName}</span>
-                                      <span class="playerPrice">${player.playerPrice}</span>
+                    <header class="card-header is-flex is-justify-content-space-between is-align-items-center"
+                        id="card-header">
+                        <p class="card-header-title" id="card-title">
+                            <span class="team-name">${teamName}</span>
+                        </p>
+                        <p class="has-text-right funds-left">
+                            Funds Left: ₹ ${team.teamFunds}
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content is-flex-direction-column">
+                            <div class="bought-players is-flex is-justify-content-flex-start is-align-items-flex-start"
+                                style="gap: 10px;margin-bottom: 1em;">
+                                <p class="block" >
+                                    <strong id="card-body">Batsman</strong>
+                                </p>
+                                <svg id="bat" viewBox="0 0 460.84737 460.84737" xmlns="http://www.w3.org/2000/svg"
+                                    style="width: 1.5em">
+                                    <path
+                                        d="m460.847656 31.75-25.070312 25.078125-31.761719-31.757813 25.082031-25.070312zm0 0"
+                                        fill="#a85d5d" />
+                                    <path
+                                        d="m378.945312 50.140625 25.070313-25.070313 31.761719 31.757813-25.070313 25.070313zm0 0"
+                                        fill="#7f4545" />
+                                    <path
+                                        d="m353.878906 75.210938 25.066406-25.070313 31.761719 31.757813-25.070312 25.070312zm0 0"
+                                        fill="#a85d5d" />
+                                    <path
+                                        d="m328.808594 100.28125 25.066406-25.070312 31.761719 31.757812-25.070313 25.070312zm0 0"
+                                        fill="#7f4545" />
+                                    <path
+                                        d="m360.566406 132.039062-25.078125 25.070313-31.75-31.75 25.070313-25.078125zm0 0"
+                                        fill="#a85d5d" />
+                                    <path
+                                        d="m352.425781 190.320312-260.136719 260.140626c-13.847656 13.847656-36.296874 13.847656-50.140624 0l-31.761719-31.761719c-13.847657-13.84375-13.847657-36.296875 0-50.140625l260.140625-260.136719 25.070312 25.066406-.21875.222657-76.050781 107.808593 107.808594-76.050781.21875-.21875zm0 0"
+                                        fill="#ffd2a6" />
+                                    <path
+                                        d="m327.355469 165.25-.21875.21875-107.808594 76.050781 76.050781-107.808593.21875-.222657zm0 0"
+                                        fill="#7f4545" />
+                                </svg>
+                            </div>
+                            <hr style="margin-top: -20px;">
+                            <div class="content">
+                                <ul class="is-left has-text-left is-flex-direction-column is-justify-content-center is-align-items-start is-marginless" style="list-style: decimal inside;">
+                                ${team.batsmen.map(player => `
+                                <div class="is-flex is-justify-content-space-between">
+                                <li>${player.playerName}</li>
+                                <div>Price : ₹<span>${player.playerPrice}</span></div>
+                                </div>
+                              `).join('')}
+                                </ul>
+                            </div>
+                            <div class="bought-players is-flex is-justify-content-flex-start is-align-items-baseline"
+                                style="gap: 10px;margin-bottom: 1em;">
+                                <p class="block">
+                                    <strong id="card-body">Bowler</strong>
+                                </p>
+                                <img src="https://cdn-icons-png.flaticon.com/128/1099/1099680.png" id="ball" alt="ball"
+                                    style="width: 1em;">
+                            </div>
+                        </div>
+                        <hr style="margin-top: -20px;">
+                        <div class="content">
+                            <ul class="is-left has-text-left is-flex-direction-column is-justify-content-center is-align-items-start is-marginless" style="list-style: decimal inside;">
+                            ${team.bowlers.map(player => `
+                                  <div class="is-flex is-justify-content-space-between">
+                                    <li>${player.playerName}</li>
+                                    <div>Price : ₹<span>${player.playerPrice}</span></div>
+                                </div>
                                   </li>
                               `).join('')}
-                          </ul>
-                      </div>
-                      <div class="bowlers" id="team${index + 1}Bowlers">
-                          <h3>Bowlers</h3>
-                          <ul>
-                              ${team.bowlers.map(player => `
-                                  <li class="player">
-                                      <span class="playerName">${player.playerName}</span>
-                                      <span class="playerPrice">${player.playerPrice}</span>
-                                  </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="bought-players is-flex is-justify-content-flex-start is-align-items-start"
+                            style="gap: 10px;margin-bottom: 1em;">
+                            <p class="block">
+                                <strong id="card-body">Wicket Keeper</strong>
+                            </p>
+                            <img src="assets/wicketkeeper.png" alt="wicketkeeper" style="width: 1.5rem;">
+                        </div>
+                        <hr style="margin-top: -20px;">
+                        <div class="content">
+                            <ul class="is-left has-text-left is-flex-direction-column is-justify-content-center is-align-items-start is-marginless" style="list-style: decimal inside;">
+                            ${team.wicketKeepers.map(player => `
+                            <div class="is-flex is-justify-content-space-between">
+                            <li>${player.playerName}</li>
+                            <div>Price : ₹<span>${player.playerPrice}</span></div>
+                            </div>
                               `).join('')}
-                          </ul>
-                      </div>
-                      <div class="wicketKeeper" id="team${index + 1}WicketKeeper">
-                          <h3>Wicket Keepers</h3>
-                          <ul>
-                              ${team.wicketKeepers.map(player => `
-                                  <li class="player">
-                                      <span class="playerName">${player.playerName}</span>
-                                      <span class="playerPrice">${player.playerPrice}</span>
-                                  </li>
-                              `).join('')}
-                          </ul>
-                      </div>
-                      <div class="allRounder" id="team${index + 1}AllRounder">
-                          <h3>All Rounders</h3>
-                          <ul>
-                              ${team.allRounders.map(player => `
-                                  <li class="player">
-                                      <span class="playerName">${player.playerName}</span>
-                                      <span class="playerPrice">${player.playerPrice}</span>
-                                  </li>
-                              `).join('')}
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-          `;
+                            </ul>
+                        </div>
+                    </div>
+                `
           teamGroupElement.appendChild(teamContainer);
       });
   }
@@ -93,14 +178,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
       players.forEach(player => {
           const playerCard = document.createElement('div');
-          playerCard.classList.add('playerCard');
+          playerCard.classList.add('block');
 
           playerCard.innerHTML = `
-              <h3>${player.name}</h3>
-              <p>Status: ${player.status}</p>
-              <p>Category: ${player.category}</p>
-              <p>Player Team: ${player.playerTeam}</p>
-              <p>Player Price: ${player.playerPrice}</p>
+            <div class="column card  player-card-size" id="card-design-player" style="margin: 5px 5px;">
+                        <header class="card-header is-flex is-justify-content-space-between is-align-items-center"
+                            id="card-header">
+                            <p id="card-title">
+                                <span class="team-name">${player.name}</span>
+                            </p>
+                        </header>
+                        <div>
+                            <div class="content is-flex-direction-column">
+                                <div class="bought-players is-flex is-justify-content-flex-start is-align-items-flex-start"
+                                    style="gap: 10px;margin-bottom: 1em;">
+                                    <p class="block">
+                                        <strong id="card-body" style="color: #0cd5eb !important">Status : </strong>
+                                    </p>
+                                    <p class="block">${player.status}</p>
+                                </div>
+                                <hr style="margin-top: -20px;">
+                                <div class="bought-players is-flex is-justify-content-flex-start is-align-items-flex-start"
+                                    style="gap: 10px;margin-bottom: 1em;">
+                                    <p class="block">
+                                        <strong id="card-body" style="color: #0cd5eb !important">Category : </strong>
+                                    </p>
+                                    <p class="block">
+                                        <strong id="card-body">${player.category}</strong>
+                                    </p>
+                                    <svg id="bat" viewBox="0 0 460.84737 460.84737" xmlns="http://www.w3.org/2000/svg"
+                                        style="width: 1.5em">
+                                        <path
+                                            d="m460.847656 31.75-25.070312 25.078125-31.761719-31.757813 25.082031-25.070312zm0 0"
+                                            fill="#a85d5d" />
+                                        <path
+                                            d="m378.945312 50.140625 25.070313-25.070313 31.761719 31.757813-25.070313 25.070313zm0 0"
+                                            fill="#7f4545" />
+                                        <path
+                                            d="m353.878906 75.210938 25.066406-25.070313 31.761719 31.757813-25.070312 25.070312zm0 0"
+                                            fill="#a85d5d" />
+                                        <path
+                                            d="m328.808594 100.28125 25.066406-25.070312 31.761719 31.757812-25.070313 25.070312zm0 0"
+                                            fill="#7f4545" />
+                                        <path
+                                            d="m360.566406 132.039062-25.078125 25.070313-31.75-31.75 25.070313-25.078125zm0 0"
+                                            fill="#a85d5d" />
+                                        <path
+                                            d="m352.425781 190.320312-260.136719 260.140626c-13.847656 13.847656-36.296874 13.847656-50.140624 0l-31.761719-31.761719c-13.847657-13.84375-13.847657-36.296875 0-50.140625l260.140625-260.136719 25.070312 25.066406-.21875.222657-76.050781 107.808593 107.808594-76.050781.21875-.21875zm0 0"
+                                            fill="#ffd2a6" />
+                                        <path
+                                            d="m327.355469 165.25-.21875.21875-107.808594 76.050781 76.050781-107.808593.21875-.222657zm0 0"
+                                            fill="#7f4545" />
+                                    </svg>
+                                </div>
+                                <hr style="margin-top: -20px;">
+
+                                <div class="bought-players is-flex is-justify-content-flex-start is-align-items-baseline"
+                                    style="gap: 10px;margin-bottom: 1em;">
+                                    <p class="block">
+                                        <strong id="card-body" style="color: #0cd5eb !important">Player Team : </strong>
+                                    </p>
+                                    <p class="block">
+                                        <strong id="card-body">${player.playerTeam}</strong>
+                                    </p>
+
+                                </div>
+                            </div>
+                            <hr style="margin-top: -20px;">
+
+                            <div class="is-flex is-justify-content-flex-start is-align-items-start"
+                                style="gap: 10px;margin-bottom: 1em;">
+                                <p class="block">
+                                    <strong id="card-body" style="color: #0cd5eb !important">Player Price : ₹</strong>
+                                </p>
+                                <p class="block">
+                                    <strong id="card-body">${player.playerPrice}</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
           `;
 
           playerDeckElement.appendChild(playerCard);
@@ -155,5 +311,4 @@ document.addEventListener('DOMContentLoaded', () => {
       const filteredPlayers = playerData.filter(player => player.name.toLowerCase().includes(searchTerm));
       renderPlayerDeck(filteredPlayers);
   });
-
 });

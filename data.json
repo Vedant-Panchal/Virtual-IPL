@@ -3,9 +3,12 @@
       "teamName": "Team 1",
       "teamFunds": "10000000 Rs",
       "batsmen": [
-        { "playerName": "", "playerPrice": "" },
-        { "playerName": "", "playerPrice": "" },
-        { "playerName": "", "playerPrice": "" }
+        { "playerName": "VIrat Kohli", "playerPrice": "1,00,000" },
+        { "playerName": "VIrat Kohli", "playerPrice": "1,00,000" },
+        { "playerName": "VIrat Kohli", "playerPrice": "1,00,000" },
+        { "playerName": "VIrat Kohli", "playerPrice": "1,00,000" },
+        { "playerName": "VIrat Kohli", "playerPrice": "1,00,000" }
+        
       ],
       "bowlers": [
         { "playerName": "", "playerPrice": "" },
@@ -161,6 +164,126 @@
     },
     {
         "teamName": "Team 9",
+        "teamFunds": "10000000 Rs",
+        "batsmen": [
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "bowlers": [
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "wicketKeepers": [
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "allRounders": [
+            { "playerName": "", "playerPrice": "" }
+        ]
+    },
+    {
+        "teamName": "Team 10",
+        "teamFunds": "10000000 Rs",
+        "batsmen": [
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "bowlers": [
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "wicketKeepers": [
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "allRounders": [
+            { "playerName": "", "playerPrice": "" }
+        ]
+    },
+    {
+        "teamName": "Team 10",
+        "teamFunds": "10000000 Rs",
+        "batsmen": [
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "bowlers": [
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "wicketKeepers": [
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "allRounders": [
+            { "playerName": "", "playerPrice": "" }
+        ]
+    },
+    {
+        "teamName": "Team 10",
+        "teamFunds": "10000000 Rs",
+        "batsmen": [
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "bowlers": [
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "wicketKeepers": [
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "allRounders": [
+            { "playerName": "", "playerPrice": "" }
+        ]
+    },
+    {
+        "teamName": "Team 10",
+        "teamFunds": "10000000 Rs",
+        "batsmen": [
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "bowlers": [
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "wicketKeepers": [
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "allRounders": [
+            { "playerName": "", "playerPrice": "" }
+        ]
+    },
+    {
+        "teamName": "Team 10",
+        "teamFunds": "10000000 Rs",
+        "batsmen": [
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "bowlers": [
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" },
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "wicketKeepers": [
+            { "playerName": "", "playerPrice": "" }
+        ],
+        "allRounders": [
+            { "playerName": "", "playerPrice": "" }
+        ]
+    },
+    {
+        "teamName": "Team 10",
         "teamFunds": "10000000 Rs",
         "batsmen": [
             { "playerName": "", "playerPrice": "" },

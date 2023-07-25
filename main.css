@@ -1,255 +1,388 @@
 /*----------------------*/
 /*Helpers*/
 /*----------------------*/
-.center, .center-column, .top, .right, .bottom, .left {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.center,
+.center-column,
+.top,
+.right,
+.bottom,
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .center-column {
-    flex-direction: column;
+  flex-direction: column;
 }
 
-.top    { align-items:     flex-start; }
-.right  { justify-content: flex-end;   }
-.bottom { align-items:     flex-end;   }
-.left   { justify-content: flex-start; }
+.top {
+  align-items: flex-start;
+}
 
-.single-spaced, .single-spaced * {
-    line-height: 1;
+.right {
+  justify-content: flex-end;
+}
+
+.bottom {
+  align-items: flex-end;
+}
+
+.left {
+  justify-content: flex-start;
+}
+
+.single-spaced,
+.single-spaced * {
+  line-height: 1;
 }
 
 @media (max-width: 1024px) {
-	.desktop {
-		display: none;
-	}
-}
-:root{
-    --font-1:"Cabin","Helvetica Neue",Helvetica,Arial,sans-serif;
-    --font-2:"Lora","Helvetica Neue",Helvetica,Arial,sans-serif;
+  .desktop {
+    display: none;
+  }
 }
 
-*{
-    font-family: "Cabin","Helvetica Neue",Helvetica,Arial,sans-serif;
-    transition: all 300ms linear !important;
-    scroll-behavior: smooth !important;
+:root {
+  --font-1: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-2: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.cabin
-{
-    font-family: var(--font-1);
+* {
+  font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition: all 300ms linear !important;
+  scroll-behavior: smooth !important;
 }
-.lora
-{
-    font-family: var(--font-2);
+
+*::-moz-selection,
+*::selection {
+  /* color: #000000; */
+  text-shadow: none;
+  background-color: #ffffff45;
 }
+
+.cabin {
+  font-family: var(--font-1);
+}
+
+.lora {
+  font-family: var(--font-2);
+}
+
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
-.herobg{
 
-    background-image: url(assets/intro-bg.jpg);
-    background-position: center;
-    background-size:cover;
-    filter:contrast(1.1);
-    opacity: 1;  
-}
-
-#tagline
-{
-    font-family: "Lora","Helvetica Neue",Helvetica,Arial,sans-serif !important;
-}
-#navbar
-{
-    background-color: rgba(255, 255, 255, 0);
-    transition: all 500ms ease-in-out;
-
+.herobg {
+  background-image: url(assets/intro-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  filter: contrast(1.1);
+  opacity: 1;
 }
 
-#card-header
-{
-    box-shadow: none !important;
-}
-#card-title{
-    font-size: 1.5em !important;
-    color: white !important;
-    font-style: italic;
-}
-#card-body{
-    color: white !important;
-}
-#page-2
-{
-    background-position: center;
-    background-size: cover !important;
-    background-image: url(https://www.oyorooms.com/travel-guide/wp-content/uploads/2023/03/Hosts-of-IPL-2023.jpg) !important;
-    background-repeat: no-repeat;
-}
-#page-3
-{
-    background-position: center;
-    background-size: cover !important;
-    background-image: url(https://cdn.cbeditz.com/cbeditz/preview/cricket-ipl-stadium-cb-picsart-editing-background-hd-download-11649407194zo6kss6fkx.webp) !important;
-    background-repeat: no-repeat;
-    padding: 1.5em;
-}
-#page-4
-{
-    background-color: transparent !important;
-    background-position: center !important;
-    background-size: cover !important;
-    background-image: url(https://m.economictimes.com/thumb/msid-99136139,width-1600,height-900,resizemode-4,imgsize-66426/ipl-2023-schedule.jpg) !important;
-    background-repeat: no-repeat;
-    
-}
-#card-design
-{
-    background: rgba(125, 125, 125, 0.176)  !important;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37)  !important;
-    backdrop-filter: blur( 12px )  !important;
-    -webkit-backdrop-filter: blur( 12px )  !important;
-    border-radius: 10px !important;
-    border: 1px solid rgba( 255, 255, 255, 0.18 )   !important;
-    color: white !important;
-}
-#card-design-player
-{
-    background: #3e568277  !important;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37)  !important;
-    backdrop-filter: blur( 15px )  !important;
-    -webkit-backdrop-filter: blur( 15px )  !important;
-    border-radius: 10px !important;
-    border: 1px solid rgba( 255, 255, 255, 0.18 )   !important;
-    color: white !important;
+#navbar {
+  background-color: rgba(255, 255, 255, 0);
+  transition: all 500ms ease-in-out;
 }
 
-.player-card-size
-{
-    width: 18em !important;
-    height: 18em !important;
+#card-header {
+  box-shadow: none !important;
 }
+
+#card-title {
+  text-transform: uppercase !important;
+  color: #eb0c70 !important;
+  font-size: 1.1em !important;
+  /* color: white !important; */
+  /* color: #0cd5eb !important; */
+  font-style: italic;
+}
+
+#card-body {
+  color: white !important;
+}
+
+#introTitle {
+  color: rgba(255, 255, 255, 0) !important;
+  font-size: 4em !important;
+  text-align: center !important;
+  font-style: italic;
+  text-shadow: 0px 0px 20px #ffffff49;
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#page-2 {
+  background-position: center;
+  background-size: cover !important;
+  background-image: url(https://www.oyorooms.com/travel-guide/wp-content/uploads/2023/03/Hosts-of-IPL-2023.jpg) !important;
+  background-repeat: no-repeat;
+}
+
+#page-3 {
+  background-position: center;
+  background-size: cover !important;
+  background-image: url(https://cdn.cbeditz.com/cbeditz/preview/cricket-ipl-stadium-cb-picsart-editing-background-hd-download-11649407194zo6kss6fkx.webp) !important;
+  background-repeat: no-repeat;
+  padding: 1.5em;
+}
+
+#page-4 {
+  background-color: transparent !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-image: url(https://m.economictimes.com/thumb/msid-99136139,width-1600,height-900,resizemode-4,imgsize-66426/ipl-2023-schedule.jpg) !important;
+  background-repeat: no-repeat;
+}
+#instaicon
+{
+    fill: black !important;
+}
+#card-design {
+  background: rgba(125, 125, 125, 0.176) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: white !important;
+}
+
+#card-design-player {
+  background: #3e568277 !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: white !important;
+}
+
+.player-card-size {
+  width: 18em !important;
+  height: 18em !important;
+}
+
 #instagramBtn {
-    border: 3px solid #feee61 !important;
-    padding: 1.5em 3em !important;
-    border-radius: 0px !important;
-    background-color: #feee61 !important;
-    color: black !important;
-    text-transform: uppercase;
-    font-weight: 700 !important;
-    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.8) !important;
-    transition: all 300ms linear !important;
+  border: 3px solid #feee61 !important;
+  padding: 1.5em 3em !important;
+  border-radius: 0px !important;
+  background-color: #feee61 !important;
+  color: black !important;
+  text-transform: uppercase;
+  font-weight: 700 !important;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.8) !important;
+  transition: all 300ms linear !important;
 }
 
-#instagramBtn:hover,#instagramBtn:active {
-    text-decoration-color: #feee61 !important;
-    background-color: #000000 !important;
-    transform: translate(5px, 5px) !important;
-    box-shadow: none !important;
-    transition: all 300ms linear !important;
+#instagramBtn:hover,
+#instagramBtn:active {
+  text-decoration-color: #feee61 !important;
+  background-color: #000000 !important;
+  transform: translate(5px, 5px) !important;
+  box-shadow: none !important;
+  transition: all 300ms linear !important;
 }
-#instagramBtn:hover>.instalink,#instagramBtn:active>.instalink{
-    transition: all 300ms linear !important;
-    color: #feee61!important;
+
+#instagramBtn:hover > .instalink,
+#instagramBtn:active > .instalink {
+  transition: all 300ms linear !important;
+  color: #feee61 !important;
 }
-.insta-card-design{
-    box-sizing: border-box;
-    position: absolute !important;
-    /* width: 30px !important;*/
-    height: max-content !important; 
-    border: 10px solid #8239d1 !important;
-    overflow: hidden !important;
-    border-radius: 20px !important;
-    box-shadow: 0px 0px 32px 10px #ebdf0c !important;
+
+.insta-card-design {
+  box-sizing: border-box;
+  position: absolute !important;
+  /* width: 30px !important;*/
+  height: max-content !important;
+  border: 10px solid #8239d1 !important;
+  overflow: hidden !important;
+  border-radius: 20px !important;
+  box-shadow: 0px 0px 32px 10px #ebdf0c !important;
 }
+
 /* New CSS to change the SVG color on hover */
-#instagramBtn:hover svg path,#instagramBtn:active svg path {
-    transition: all 300ms linear !important;
-    fill: #feee61 !important; /* Change the fill color of the SVG path */
-}
-#input
-{
-    width: max-content;
-    border-radius: 15px !important;
-    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px !important;
-    color: #000;
-    border: none !important;
-    background-color: #fef9f5;
-    overflow: hidden  !important;
-}
-.input{
-    color: #000;
-    border: none !important;
-    background-color: #fef9f5;
-}
-.input:focus,.input:active{
-    border: none !important;
-    box-shadow: none !important;
-    outline: none !important;
-}
-.input::placeholder{
-    color:#464646b6 ;
-}
-#searchButton,#searchButton:focus,#searchButton:active{
-    border: none !important;
-    box-shadow: none !important;
+#instagramBtn:hover svg path,
+#instagramBtn:active svg path {
+  transition: all 300ms linear !important;
+  fill: #feee61 !important;
+  /* Change the fill color of the SVG path */
 }
 
-.funds-left{
-    color: #03BBF9 !important;
-    font-style: italic;
+#input {
+  width: max-content;
+  border-radius: 15px !important;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px !important;
+  color: #000;
+  border: none !important;
+  background-color: #fef9f5;
+  overflow: hidden !important;
 }
+
+.input {
+  color: #000;
+  border: none !important;
+  background-color: #fef9f5;
+}
+
+.input:focus,
+.input:active {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.input::placeholder {
+  color: #464646b6;
+}
+
+#searchButton,
+#searchButton:focus,
+#searchButton:active {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.funds-left {
+  color: #03bbf9 !important;
+  font-style: italic;
+}
+
 @keyframes navbarAnimation {
-    0% {
-        background-color: rgba(255, 255, 255, 0);
-        opacity: 0;
-        /* transform: translateY(-50px); */
-    }
+  0% {
+    background-color: rgba(255, 255, 255, 0);
+    opacity: 0;
+    /* transform: translateY(-50px); */
+  }
 
-    100% {
-        background-color: #000;
-        opacity: 1;
-        text-shadow: 0px 0px 30px #03BBF9;
-        border-bottom: 1px solid rgb(255, 255, 255);
-    }
+  100% {
+    background-color: #000;
+    opacity: 1;
+    text-shadow: 0px 0px 30px #03bbf9;
+    box-shadow: 0px 16px 20px 5px rgba(46, 213, 227, 0.7);
+  }
 }
+
 /* Add the animation class that will trigger the animation */
 .navbar-animated {
-    animation: navbarAnimation 500ms ease-out 0s 1 normal forwards;
-    /* 'animation' property format: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction animation-fill-mode; */
+  animation: navbarAnimation 500ms ease-out 0s 1 normal forwards;
+  /* 'animation' property format: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction animation-fill-mode; */
 }
 
-@media only screen and (max-width: 600px) {
-    .herobg{
-        background-image: url(assets/ipl-bg-mobile.jpg);
-        background-position: center center;
-        background-size: cover;   
-        background-repeat: no-repeat;
-    }
-    #title
-    {
-        font-size: 35px !important;
-    }
-    #logo
-    {
-        width: 50px !important;
-        height: 50px !important;
-    }
-    #winner
-    {
-        font-size: 4.5rem !important;
-    }
-    #page-2
-    {
-        background-position: center !important;
-        background-size:cover !important;
-        background-image: url(https://i.pinimg.com/1200x/a3/31/f6/a331f66aec50280defa6deaa34d29240.jpg) !important;
-        background-repeat: no-repeat;
-    }
-    #page-3
+@media only screen and (max-width: 600px) 
 {
+  .herobg {
+    background-image: url(assets/ipl-bg-mobile.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #title {
+    /* font-size: 1em !important; */
+  }
+
+  #logo {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  #winner {
+    font-size: 4.5rem !important;
+  }
+
+  #page-2 {
+    background-position: center !important;
+    background-size: cover !important;
+    background-image: url(https://i.pinimg.com/1200x/a3/31/f6/a331f66aec50280defa6deaa34d29240.jpg) !important;
+    background-repeat: no-repeat;
+  }
+
+  #page-3 {
     background-position: center;
     background-size: cover !important;
     background-image: url(https://png.pngtree.com/background/20220718/original/pngtree-blue-colorful-dynamic-dot-background-material-picture-image_1654337.jpg) !important;
     background-repeat: no-repeat;
-}
-    
+  }
+
+  #introTitle {
+    color: rgba(255, 255, 255, 0) !important;
+    font-size: 3em !important;
+    text-align: center !important;
+    font-style: italic;
+    text-shadow: 0px 0px 30px #3e3e3ea4;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(125, 125, 125, 0.176) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    color: white !important;
+    /* Customize the background color */
+    padding-top: 4rem !important;
+    /* Optional padding on top */
+    width: 70%;
+    /* Adjust the width of the dropdown as needed */
+    transform: translateX(100%) !important;
+    transition: transform 500ms ease-in-out !important; /* Only apply transition to the 'transform' property */
+  }
+
+  .navbar-menu.is-active {
+    transform: translateX(0%) !important;
+  }
+
+  /* Styles for the close button with "X" */
+  #closeButton {
+    position: absolute;
+    top: 2em;
+    left: 0.5rem !important;
+    padding: 1rem;
+    transition: opacity 500ms ease-in-out !important; /* Apply transition to the 'opacity' property */
+    display: none; /* Hide the close button by default */
+  }
+
+  .navbar-menu.is-active #closeButton {
+    display: block; /* Show the close button when the menu is active */
+  }
+
+  #closeButton.is-active {
+    opacity: 0.5; /* Adjust the opacity when the close button is active */
+  }
+
+
+  .custom-menu-button {
+    position: absolute;
+    top: 1.5em;
+    right: 1em;
+    margin-left: 1em !important;
+    border: none !important;
+    background-color: transparent !important;
+    transition: transform 500ms ease-in-out !important; /* Apply transition to the 'transform' property */
+  }
+
+  .custom-menu-button:active .fas {
+    transform: rotate(90deg); /* Rotate the icon when the menu is active */
+  }
+
+  /* Optional styles for the "X" icon */
+  .custom-menu-button .fas {
+    transition: transform 500ms ease-in-out !important; /* Apply transition to the 'transform' property */
+  }
+  .navbar-item:hover,.navbar-item:active{
+    background-color: transparent !important;
+    color: rgb(189, 222, 222) !important;
+  }
 }
