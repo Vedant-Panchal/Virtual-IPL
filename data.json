@@ -3,20 +3,22 @@
       "teamName": "Team 1",
       "teamFunds": "10000000 Rs",
       "batsmen": [
-        { "playerName": "VIrat Kohli", "playerPrice": "1,00,000" },
-        { "playerName": "VIrat Kohli", "playerPrice": "1,00,000" },
-        { "playerName": "VIrat Kohli", "playerPrice": "1,00,000" },
-        { "playerName": "VIrat Kohli", "playerPrice": "1,00,000" },
-        { "playerName": "VIrat Kohli", "playerPrice": "1,00,000" }
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" }
         
       ],
       "bowlers": [
-        { "playerName": "", "playerPrice": "" },
-        { "playerName": "", "playerPrice": "" },
-        { "playerName": "", "playerPrice": "" }
+        { "playerName": "VIrat Kohli", "playerPrice": "1000000" },
+        { "playerName": "VIrat Kohli", "playerPrice": "1000000" },
+        { "playerName": "VIrat Kohli", "playerPrice": "1000000" }
       ],
       "wicketKeepers": [
-        { "playerName": "", "playerPrice": "" }
+        { "playerName": "VIrat Kohli", "playerPrice": "1000000" },
+        { "playerName": "VIrat Kohli", "playerPrice": "1000000" },
+        { "playerName": "VIrat Kohli", "playerPrice": "1000000" }
       ],
       "allRounders": [
         { "playerName": "", "playerPrice": "" }
@@ -26,9 +28,11 @@
       "teamName": "Team 2",
       "teamFunds": "10000000 Rs",
       "batsmen": [
-        { "playerName": "", "playerPrice": "" },
-        { "playerName": "", "playerPrice": "" },
-        { "playerName": "", "playerPrice": "" }
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" }
       ],
       "bowlers": [
         { "playerName": "", "playerPrice": "" },
@@ -46,9 +50,11 @@
       "teamName": "Team 3",
       "teamFunds": "10000000 Rs",
       "batsmen": [
-        { "playerName": "", "playerPrice": "" },
-        { "playerName": "", "playerPrice": "" },
-        { "playerName": "", "playerPrice": "" }
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" }
       ],
       "bowlers": [
         { "playerName": "", "playerPrice": "" },
@@ -66,9 +72,11 @@
         "teamName": "Team 4",
         "teamFunds": "10000000 Rs",
         "batsmen": [
-            { "playerName": "", "playerPrice": "" },
-            { "playerName": "", "playerPrice": "" },
-            { "playerName": "", "playerPrice": "" }
+            { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" }
         ],
         "bowlers": [
             { "playerName": "", "playerPrice": "" },
@@ -86,9 +94,11 @@
         "teamName": "Team 5",
         "teamFunds": "10000000 Rs",
         "batsmen": [
-            { "playerName": "", "playerPrice": "" },
-            { "playerName": "", "playerPrice": "" },
-            { "playerName": "", "playerPrice": "" }
+            { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" }
         ],
         "bowlers": [
             { "playerName": "", "playerPrice": "" },
@@ -106,9 +116,11 @@
         "teamName": "Team 6",
         "teamFunds": "10000000 Rs",
         "batsmen": [
-            { "playerName": "", "playerPrice": "" },
-            { "playerName": "", "playerPrice": "" },
-            { "playerName": "", "playerPrice": "" }
+            { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" }
         ],
         "bowlers": [
             { "playerName": "", "playerPrice": "" },
@@ -126,9 +138,11 @@
         "teamName": "Team 7",
         "teamFunds": "10000000 Rs",
         "batsmen": [
-            { "playerName": "", "playerPrice": "" },
-            { "playerName": "", "playerPrice": "" },
-            { "playerName": "", "playerPrice": "" }
+            { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" }
         ],
         "bowlers": [
             { "playerName": "", "playerPrice": "" },
@@ -146,9 +160,11 @@
         "teamName": "Team 8",
         "teamFunds": "10000000 Rs",
         "batsmen": [
-            { "playerName": "", "playerPrice": "" },
-            { "playerName": "", "playerPrice": "" },
-            { "playerName": "", "playerPrice": "" }
+            { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" }
         ],
         "bowlers": [
             { "playerName": "", "playerPrice": "" },
@@ -166,9 +182,11 @@
         "teamName": "Team 9",
         "teamFunds": "10000000 Rs",
         "batsmen": [
-            { "playerName": "", "playerPrice": "" },
-            { "playerName": "", "playerPrice": "" },
-            { "playerName": "", "playerPrice": "" }
+            { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" }
         ],
         "bowlers": [
             { "playerName": "", "playerPrice": "" },
@@ -186,9 +204,11 @@
         "teamName": "Team 10",
         "teamFunds": "10000000 Rs",
         "batsmen": [
-            { "playerName": "", "playerPrice": "" },
-            { "playerName": "", "playerPrice": "" },
-            { "playerName": "", "playerPrice": "" }
+            { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" },
+        { "playerName": "Virat Kohli", "playerPrice": "1000000" }
         ],
         "bowlers": [
             { "playerName": "", "playerPrice": "" },

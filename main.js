@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
           teamContainer.setAttribute('id', 'card-design');
           teamContainer.setAttribute('style', 'margin: 5px 5px;');
 
-          const totalPlayerPrice = team.batsmen.reduce((sum, player) => sum + parsePrice(player.playerPrice), 0)
+          const totalPlayerPrice = team.batsmen.reduce((sum, player) =>sum + parsePrice(player.playerPrice), 0)
           + team.bowlers.reduce((sum, player) => sum + parsePrice(player.playerPrice), 0)
           + team.wicketKeepers.reduce((sum, player) => sum + parsePrice(player.playerPrice), 0)
           + team.allRounders.reduce((sum, player) => sum + parsePrice(player.playerPrice), 0);
@@ -68,9 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
               teamFunds = -Math.abs(teamFunds);
           }
 
-          team.teamFunds = teamFunds.toString();
+          team.teamFunds = teamFunds.toLocaleString('en-IN');
 
-          const teamName = isDisqualified ? `${team.teamName} (disqualified)` : team.teamName;
+          const teamName = isDisqualified ? `${team.teamName}<br>(disqualified)` : team.teamName;
 
           teamContainer.innerHTML = `
                     <header class="card-header is-flex is-justify-content-space-between is-align-items-center"
@@ -78,9 +78,21 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="card-header-title" id="card-title">
                             <span class="team-name">${teamName}</span>
                         </p>
-                        <p class="has-text-right funds-left">
-                            Funds Left: ₹ ${team.teamFunds}
-                        </p>
+                        ${
+                        isDisqualified ?
+                        
+                            `<p class="has-text-right funds-left">
+                            Funds Left <br> ₹ ${team.teamFunds}
+                            </p>`
+                        
+                    :
+                    
+                        `<p class="has-text-right funds-left">
+                            Funds Left: ₹${team.teamFunds}
+                        </p>`
+                        }
+                    
+                        
                     </header>
                     <div class="card-content">
                         <div class="content is-flex-direction-column">
@@ -120,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 ${team.batsmen.map(player => `
                                 <div class="is-flex is-justify-content-space-between">
                                 <li>${player.playerName}</li>
-                                <div>Price : ₹<span>${player.playerPrice}</span></div>
+                                <div>Price : ₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
                                 </div>
                               `).join('')}
                                 </ul>
@@ -140,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${team.bowlers.map(player => `
                                   <div class="is-flex is-justify-content-space-between">
                                     <li>${player.playerName}</li>
-                                    <div>Price : ₹<span>${player.playerPrice}</span></div>
+                                    <div>Price : ₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
                                 </div>
                                   </li>
                               `).join('')}
@@ -160,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${team.wicketKeepers.map(player => `
                             <div class="is-flex is-justify-content-space-between">
                             <li>${player.playerName}</li>
-                            <div>Price : ₹<span>${player.playerPrice}</span></div>
+                            <div>Price : ₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
                             </div>
                               `).join('')}
                             </ul>
@@ -252,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <strong id="card-body" style="color: #0cd5eb !important">Player Price : ₹</strong>
                                 </p>
                                 <p class="block">
-                                    <strong id="card-body">${player.playerPrice}</strong>
+                                    <strong id="card-body">${player.playerPrice.toLocaleString('en-IN')}</strong>
                                 </p>
                             </div>
                         </div>

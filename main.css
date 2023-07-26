@@ -1,3 +1,4 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 /*----------------------*/
 /*Helpers*/
 /*----------------------*/
@@ -61,29 +62,81 @@
   background-color: #ffffff45;
 }
 
+/* Primary Font */
 .cabin {
   font-family: var(--font-1);
 }
-
+/* Secondary Font */
 .lora {
   font-family: var(--font-2);
 }
+/*Navbar Starts*/
+#navbar {
+  background-color: rgba(255, 255, 255, 0);
+  transition: all 500ms ease-in-out;
+}
 
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+/* navbar fade animation on scroll */
+@keyframes navbarAnimation {
+  0% {
+    background-color: rgba(255, 255, 255, 0);
+    opacity: 0;
+    /* transform: translateY(-50px); */
+  }
 
+  100% {
+    background-color: #000;
+    opacity: 1;
+    text-shadow: 0px 0px 30px #03bbf9;
+    box-shadow: 0px 16px 20px 5px rgba(46, 213, 227, 0.7);
+  }
+}
+
+/* Animation Trigger */
+.navbar-animated {
+  animation: navbarAnimation 500ms ease-out 0s 1 normal forwards;
+}
+/* Navbar Ends */
+
+/* Page-1 Start */
 .herobg {
+  /* winnner bg change */
+  /* background-image: url(https://thumbs.gfycat.com/EmbellishedTatteredLadybug-size_restricted.gif); */
   background-image: url(assets/intro-bg.jpg);
   background-position: center;
   background-size: cover;
   filter: contrast(1.1);
   opacity: 1;
 }
+/* Page-1 title */
+#introTitle {
+  color: rgb(255, 255, 255) !important;
+  font-size: 4em !important;
+  text-align: center !important;
+  font-style: italic;
+  text-shadow: 0px 0px 20px #ffffff49;
+}
+/* Page-1 End */
 
-#navbar {
-  background-color: rgba(255, 255, 255, 0);
-  transition: all 500ms ease-in-out;
+
+/* Page-2 Start*/
+#page-2 {
+  background-position: center;
+  background-size: cover !important;
+  background-image: url(https://www.oyorooms.com/travel-guide/wp-content/uploads/2023/03/Hosts-of-IPL-2023.jpg) !important;
+  background-repeat: no-repeat;
 }
 
+/* Team card start */
+#card-design {
+  background: rgba(125, 125, 125, 0.176) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: white !important;
+}
 #card-header {
   box-shadow: none !important;
 }
@@ -96,59 +149,27 @@
   /* color: #0cd5eb !important; */
   font-style: italic;
 }
-
+.funds-left {
+  color: #03bbf9 !important;
+  font-style: italic;
+}
 #card-body {
   color: white !important;
 }
+/* Page-2 Ends */
+/* Team Card Ends */
 
-#introTitle {
-  color: rgba(255, 255, 255, 0) !important;
-  font-size: 4em !important;
-  text-align: center !important;
-  font-style: italic;
-  text-shadow: 0px 0px 20px #ffffff49;
-  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#page-2 {
-  background-position: center;
-  background-size: cover !important;
-  background-image: url(https://www.oyorooms.com/travel-guide/wp-content/uploads/2023/03/Hosts-of-IPL-2023.jpg) !important;
-  background-repeat: no-repeat;
-}
-
+/* Page-3 Start */
 #page-3 {
   background-position: center;
-  background-size: cover !important;
-  background-image: url(https://cdn.cbeditz.com/cbeditz/preview/cricket-ipl-stadium-cb-picsart-editing-background-hd-download-11649407194zo6kss6fkx.webp) !important;
+  background-size: cover !important;  
+  background-color: rgb(16, 16, 16);
+  /* background-image: url(https://cdn.cbeditz.com/cbeditz/preview/cricket-ipl-stadium-cb-picsart-editing-background-hd-download-11649407194zo6kss6fkx.webp) !important; */
   background-repeat: no-repeat;
   padding: 1.5em;
 }
 
-#page-4 {
-  background-color: transparent !important;
-  background-position: center !important;
-  background-size: cover !important;
-  background-image: url(https://m.economictimes.com/thumb/msid-99136139,width-1600,height-900,resizemode-4,imgsize-66426/ipl-2023-schedule.jpg) !important;
-  background-repeat: no-repeat;
-}
-#instaicon
-{
-    fill: black !important;
-}
-#card-design {
-  background: rgba(125, 125, 125, 0.176) !important;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border-radius: 10px !important;
-  border: 1px solid rgba(255, 255, 255, 0.18) !important;
-  color: white !important;
-}
-
+/* Player Card Design */
 #card-design-player {
   background: #3e568277 !important;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
@@ -162,6 +183,57 @@
 .player-card-size {
   width: 18em !important;
   height: 18em !important;
+}
+/* Card Design Ends */
+/* Search Bar Design Start */
+#input {
+  width: max-content;
+  border-radius: 15px !important;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px !important;
+  color: #000;
+  border: none !important;
+  background-color: #fef9f5;
+  overflow: hidden !important;
+}
+
+.input {
+  color: #000;
+  border: none !important;
+  background-color: #fef9f5;
+}
+
+.input:focus,
+.input:active {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.input::placeholder {
+  color: #464646b6;
+}
+
+#searchButton,
+#searchButton:focus,
+#searchButton:active {
+  border: none !important;
+  box-shadow: none !important;
+}
+/* Search Bar Design Ends */
+/* Page-3 Ends */
+
+/* Page-4 Starts */
+#page-4 {
+  background-color: transparent !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-image: url(https://m.economictimes.com/thumb/msid-99136139,width-1600,height-900,resizemode-4,imgsize-66426/ipl-2023-schedule.jpg) !important;
+  background-repeat: no-repeat;
+}
+#instaicon
+{
+    fill: black !important;
 }
 
 #instagramBtn {
@@ -209,116 +281,13 @@
   fill: #feee61 !important;
   /* Change the fill color of the SVG path */
 }
+/* Page-4 Ends */
 
-#input {
-  width: max-content;
-  border-radius: 15px !important;
-  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
-    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px !important;
-  color: #000;
-  border: none !important;
-  background-color: #fef9f5;
-  overflow: hidden !important;
-}
-
-.input {
-  color: #000;
-  border: none !important;
-  background-color: #fef9f5;
-}
-
-.input:focus,
-.input:active {
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-
-.input::placeholder {
-  color: #464646b6;
-}
-
-#searchButton,
-#searchButton:focus,
-#searchButton:active {
-  border: none !important;
-  box-shadow: none !important;
-}
-
-.funds-left {
-  color: #03bbf9 !important;
-  font-style: italic;
-}
-
-@keyframes navbarAnimation {
-  0% {
-    background-color: rgba(255, 255, 255, 0);
-    opacity: 0;
-    /* transform: translateY(-50px); */
-  }
-
-  100% {
-    background-color: #000;
-    opacity: 1;
-    text-shadow: 0px 0px 30px #03bbf9;
-    box-shadow: 0px 16px 20px 5px rgba(46, 213, 227, 0.7);
-  }
-}
-
-/* Add the animation class that will trigger the animation */
-.navbar-animated {
-  animation: navbarAnimation 500ms ease-out 0s 1 normal forwards;
-  /* 'animation' property format: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction animation-fill-mode; */
-}
-
+/* Mobile Design Changes */
 @media only screen and (max-width: 600px) 
 {
-  .herobg {
-    background-image: url(assets/ipl-bg-mobile.jpg);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  /* #title {
-    /* font-size: 1em !important; */
-  /* }  */
-
-  #logo {
-    width: 50px !important;
-    height: 50px !important;
-  }
-
-  #winner {
-    font-size: 4.5rem !important;
-  }
-
-  #page-2 {
-    background-position: center !important;
-    background-size: cover !important;
-    background-image: url(https://i.pinimg.com/1200x/a3/31/f6/a331f66aec50280defa6deaa34d29240.jpg) !important;
-    background-repeat: no-repeat;
-  }
-
-  #page-3 {
-    background-position: center;
-    background-size: cover !important;
-    background-image: url(https://png.pngtree.com/background/20220718/original/pngtree-blue-colorful-dynamic-dot-background-material-picture-image_1654337.jpg) !important;
-    background-repeat: no-repeat;
-  }
-
-  #introTitle {
-    color: rgba(255, 255, 255, 0) !important;
-    font-size: 3em !important;
-    text-align: center !important;
-    font-style: italic;
-    text-shadow: 0px 0px 30px #3e3e3ea4;
-    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
+  /* Navbar Starts */
+  /* Menu Design */
   .navbar-menu {
     position: fixed;
     top: 0;
@@ -344,7 +313,7 @@
     transform: translateX(0%) !important;
   }
 
-  /* Styles for the close button with "X" */
+  /* Close button design*/
   #closeButton {
     position: absolute;
     top: 2em;
@@ -362,7 +331,7 @@
     opacity: 0.5; /* Adjust the opacity when the close button is active */
   }
 
-
+/* menu button */
   .custom-menu-button {
     position: absolute;
     top: 1.5em;
@@ -377,12 +346,52 @@
     transform: rotate(90deg); /* Rotate the icon when the menu is active */
   }
 
-  /* Optional styles for the "X" icon */
+  /* Optional styles for the close icon */
   .custom-menu-button .fas {
     transition: transform 500ms ease-in-out !important; /* Apply transition to the 'transform' property */
   }
   .navbar-item:hover,.navbar-item:active{
     background-color: transparent !important;
     color: rgb(189, 222, 222) !important;
+  }
+  /* Navbar Ends */
+
+
+  /* Page-1 Starts*/
+  .herobg {
+    /* winner bg change */
+    /* background-image: url(https://thumbs.gfycat.com/EmbellishedTatteredLadybug-size_restricted.gif); */
+    background-image: url(assets/ipl-bg-mobile.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  #introTitle {
+    color: rgb(255, 255, 255) !important;
+    font-size: 3em !important;
+    text-align: center !important;
+    font-style: italic;
+    text-shadow: 0px 0px 30px #3e3e3ea4;
+  }
+/* Page-1 Ends */
+  /* Pratyagra Logo */
+  #logo {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  /* Page-2 */
+  #page-2 {
+    background-position: center !important;
+    background-size: cover !important;
+    background-image: url(https://i.pinimg.com/1200x/a3/31/f6/a331f66aec50280defa6deaa34d29240.jpg) !important;
+    background-repeat: no-repeat;
+  }
+/* Page-3 */
+  #page-3 {
+    background-position: center;
+    background-size: cover !important;
+    background-image: url(https://png.pngtree.com/background/20220718/original/pngtree-blue-colorful-dynamic-dot-background-material-picture-image_1654337.jpg) !important;
+    background-repeat: no-repeat;
   }
 }
