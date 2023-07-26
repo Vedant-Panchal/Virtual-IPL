@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 ${team.batsmen.map(player => `
                                 <div class="is-flex is-justify-content-space-between">
                                 <li>${player.playerName}</li>
-                                <div>Price : ₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
+                                <div>₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
                                 </div>
                               `).join('')}
                                 </ul>
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${team.bowlers.map(player => `
                                   <div class="is-flex is-justify-content-space-between">
                                     <li>${player.playerName}</li>
-                                    <div>Price : ₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
+                                    <div>₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
                                 </div>
                                   </li>
                               `).join('')}
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${team.wicketKeepers.map(player => `
                             <div class="is-flex is-justify-content-space-between">
                             <li>${player.playerName}</li>
-                            <div>Price : ₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
+                            <div>₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
                             </div>
                               `).join('')}
                             </ul>
