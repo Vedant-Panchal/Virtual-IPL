@@ -1,99 +1,95 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // menu mobile devices
-  const customMenuButton = document.querySelector('.custom-menu-button');
-  const menu = document.getElementById('navbarMenu');
+    // menu mobile devices
+    const customMenuButton = document.querySelector('.custom-menu-button');
+    const menu = document.getElementById('navbarMenu');
+    
+    // Function to close the menu
+    const closeMenu = () => {
+        customMenuButton.classList.remove('is-active');
+        menu.classList.remove('is-active');
+    };
 
-  // Function to close the menu
-  const closeMenu = () => {
-    customMenuButton.classList.remove('is-active');
-    menu.classList.remove('is-active');
-  };
+    // Toggle the menu when the custom menu button is clicked
+    customMenuButton.addEventListener('click', () => {
+        customMenuButton.classList.toggle('is-active');
+        menu.classList.toggle('is-active');
 
-  // Toggle the menu when the custom menu button is clicked
-  customMenuButton.addEventListener('click', () => {
-    customMenuButton.classList.toggle('is-active');
-    menu.classList.toggle('is-active');
+        // Show the close button with "X" when the menu is opened
+        const closeButton = document.getElementById('closeButton');
+        closeButton.style.display = menu.classList.contains('is-active') ? 'block' : 'none';
+    });
 
-    // Show the close button with "X" when the menu is opened
+    // Close the menu when the close button is clicked
     const closeButton = document.getElementById('closeButton');
-    closeButton.style.display = menu.classList.contains('is-active') ? 'block' : 'none';
-  });
+    closeButton.addEventListener('click', () => {
+        closeMenu();
+    });
 
-  // Close the menu when the close button is clicked
-  const closeButton = document.getElementById('closeButton');
-  closeButton.addEventListener('click', () => {
-    closeMenu();
-  });
+    // Close the menu when the user clicks outside the menu or custom menu button
+    document.addEventListener('click', (event) => {
+        const isMenuClicked = event.target.closest('.navbar-menu');
+        const isButtonClicked = event.target.closest('.custom-menu-button');
+        if (!isMenuClicked && !isButtonClicked) {
+            closeMenu();
+        }
+    });
 
-  // Close the menu when the user clicks outside the menu or custom menu button
-  document.addEventListener('click', (event) => {
-    const isMenuClicked = event.target.closest('.navbar-menu');
-    const isButtonClicked = event.target.closest('.custom-menu-button');
-    if (!isMenuClicked && !isButtonClicked) {
-      closeMenu();
-    }
-  });
-
-  // Close the menu when the user clicks the back button
-  window.addEventListener('popstate', () => {
-    closeMenu();
-  });
+    // Close the menu when the user clicks the back button
+    window.addEventListener('popstate', () => {
+        closeMenu();
+    });
   
   
-  // end of mobile menu
-  const teamGroupElement = document.querySelector('.team-group');
-  let teamData;
-  let playerData;
+    // end of mobile menu
+    const teamGroupElement = document.querySelector('.team-group');
+    let teamData;
+    let playerData;
 
-  function renderTeam() {
-      teamGroupElement.innerHTML = '';
+    function renderTeam() {
+        teamGroupElement.innerHTML = '';
 
-      teamData.forEach((team, index) => {
-          const teamContainer = document.createElement('div');
-          teamContainer.classList.add('column');
-          teamContainer.classList.add('card');
-          teamContainer.classList.add('is-one-quarter-desktop');
-          teamContainer.setAttribute('id', 'card-design');
-          teamContainer.setAttribute('style', 'margin: 5px 5px;');
+        teamData.forEach((team, index) => {
+            const teamContainer = document.createElement('div');
+            teamContainer.classList.add('column');
+            teamContainer.classList.add('card');
+            teamContainer.classList.add('is-one-quarter-desktop');
+            teamContainer.setAttribute('id', 'card-design');
+            teamContainer.setAttribute('style', 'margin: 5px 5px;');
 
-          const totalPlayerPrice = team.batsmen.reduce((sum, player) =>sum + parsePrice(player.playerPrice), 0)
-          + team.bowlers.reduce((sum, player) => sum + parsePrice(player.playerPrice), 0)
-          + team.wicketKeepers.reduce((sum, player) => sum + parsePrice(player.playerPrice), 0)
-          + team.allRounders.reduce((sum, player) => sum + parsePrice(player.playerPrice), 0);
+            const totalPlayerPrice = team.batsmen.reduce((sum, player) =>sum + parsePrice(player.playerPrice), 0)
+            + team.bowlers.reduce((sum, player) => sum + parsePrice(player.playerPrice), 0)
+            + team.wicketKeepers.reduce((sum, player) => sum + parsePrice(player.playerPrice), 0)
+            + team.allRounders.reduce((sum, player) => sum + parsePrice(player.playerPrice), 0);
 
-          let teamFunds = parseInt(parsePrice(team.teamFunds)) - totalPlayerPrice;
-          const isDisqualified = teamFunds < 0;
+            let teamFunds = parseInt(parsePrice(team.teamFunds)) - totalPlayerPrice;
+            const isDisqualified = teamFunds < 0;
 
-          if (isDisqualified) {
-              teamFunds = -Math.abs(teamFunds);
-          }
+            if (isDisqualified) {
+                teamFunds = -Math.abs(teamFunds);
+            }
 
-          team.teamFunds = teamFunds.toLocaleString('en-IN');
+            team.teamFunds = teamFunds.toLocaleString('en-IN');
 
-          const teamName = isDisqualified ? `${team.teamName}<br>(disqualified)` : team.teamName;
+            const teamName = isDisqualified ? `${team.teamName}<br>(disqualified)` : team.teamName;
 
-          teamContainer.innerHTML = `
-                    <header class="card-header is-flex is-justify-content-space-between is-align-items-center"
-                        id="card-header">
-                        <p class="card-header-title" id="card-title">
-                            <span class="team-name">${teamName}</span>
-                        </p>
+            teamContainer.innerHTML = `
+                <header class="card-header is-flex is-justify-content-space-between is-align-items-center" id="card-header">
+                    <p class="card-header-title" id="card-title">
+                        <span class="team-name">${teamName}</span>
+                    </p>
                         ${
                         isDisqualified ?
-                        
                             `<p class="has-text-right funds-left">
-                            Funds Left <br> ₹ ${team.teamFunds}
+                                Funds <br> ₹ ${team.teamFunds}
                             </p>`
                         
-                    :
+                        :
                     
-                        `<p class="has-text-right funds-left">
-                            Funds Left: ₹${team.teamFunds}
-                        </p>`
+                            `<p class="has-text-right funds-left">
+                                Funds: ₹${team.teamFunds}
+                            </p>`
                         }
-                    
-                        
-                    </header>
+                </header>
                     <div class="card-content">
                         <div class="content is-flex-direction-column">
                             <div class="bought-players is-flex is-justify-content-flex-start is-align-items-flex-start"
@@ -132,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 ${team.batsmen.map(player => `
                                 <div class="is-flex is-justify-content-space-between">
                                 <li>${player.playerName}</li>
-                                <div>Price : ₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
+                                <div>₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
                                 </div>
                               `).join('')}
                                 </ul>
@@ -152,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${team.bowlers.map(player => `
                                   <div class="is-flex is-justify-content-space-between">
                                     <li>${player.playerName}</li>
-                                    <div>Price : ₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
+                                    <div>₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
                                 </div>
                                   </li>
                               `).join('')}
@@ -172,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${team.wicketKeepers.map(player => `
                             <div class="is-flex is-justify-content-space-between">
                             <li>${player.playerName}</li>
-                            <div>Price : ₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
+                            <div>₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
                             </div>
                               `).join('')}
                             </ul>
@@ -215,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${team.allRounders.map(player => `
                             <div class="is-flex is-justify-content-space-between">
                             <li>${player.playerName}</li>
-                            <div>Price : ₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
+                            <div>₹<span>  ${parseInt(parsePrice(player.playerPrice)).toLocaleString("en-IN")}</span></div>
                             </div>
                               `).join('')}
                             </ul>
@@ -225,7 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
           teamGroupElement.appendChild(teamContainer);
       });
   }
-
   
   function renderPlayerDeck(players) {
       const playerDeckElement = document.querySelector('.playerDeck');
