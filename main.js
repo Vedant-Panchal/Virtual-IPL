@@ -234,8 +234,8 @@ document.addEventListener('DOMContentLoaded', () => {
       players.forEach(player => {
           const playerCard = document.createElement('div');
           playerCard.classList.add('block');
-
-          playerCard.innerHTML = `
+        if (player.category == 'Batsman') {
+            playerCard.innerHTML = `
             <div class="column card  player-card-size" id="card-design-player" style="margin: 5px 5px;">
                         <header class="card-header is-flex is-justify-content-space-between is-align-items-center"
                             id="card-header">
@@ -313,7 +313,204 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
           `;
+        }
+        else if (player.category == 'Bowler') {
+            playerCard.innerHTML = `
+            <div class="column card  player-card-size" id="card-design-player" style="margin: 5px 5px;">
+                        <header class="card-header is-flex is-justify-content-space-between is-align-items-center"
+                            id="card-header">
+                            <p id="card-title">
+                                <span class="team-name">${player.name}</span>
+                            </p>
+                        </header>
+                        <div>
+                            <div class="content is-flex-direction-column">
+                                <div class="bought-players is-flex is-justify-content-flex-start is-align-items-flex-start"
+                                    style="gap: 10px;margin-bottom: 1em;">
+                                    <p class="block">
+                                        <strong id="card-body" style="color: #0cd5eb !important">Status : </strong>
+                                    </p>
+                                    <p class="block">${player.status}</p>
+                                </div>
+                                <hr style="margin-top: -20px;">
+                                <div class="bought-players is-flex is-justify-content-flex-start is-align-items-flex-start"
+                                    style="gap: 10px;margin-bottom: 1em;">
+                                    <p class="block">
+                                        <strong id="card-body" style="color: #0cd5eb !important">Category : </strong>
+                                    </p>
+                                    <p class="block">
+                                        <strong id="card-body">${player.category}</strong>
+                                    </p>
+                                    <img src="https://cdn-icons-png.flaticon.com/128/1099/1099680.png" id="ball" alt="ball"
+                                    style="width: 1em;">
+                                </div>
+                                <hr style="margin-top: -20px;">
 
+                                <div class="bought-players is-flex is-justify-content-flex-start is-align-items-baseline"
+                                    style="gap: 10px;margin-bottom: 1em;">
+                                    <p class="block">
+                                        <strong id="card-body" style="color: #0cd5eb !important">Player Team : </strong>
+                                    </p>
+                                    <p class="block">
+                                        <strong id="card-body">${player.playerTeam}</strong>
+                                    </p>
+
+                                </div>
+                            </div>
+                            <hr style="margin-top: -20px;">
+
+                            <div class="is-flex is-justify-content-flex-start is-align-items-start"
+                                style="gap: 10px;margin-bottom: 1em;">
+                                <p class="block">
+                                    <strong id="card-body" style="color: #0cd5eb !important">Player Price : ₹</strong>
+                                </p>
+                                <p class="block">
+                                    <strong id="card-body">${player.playerPrice.toLocaleString('en-IN')}</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+          `;     
+        }
+        else if (player.category == 'Wicket Keeper') {
+            playerCard.innerHTML = `
+            <div class="column card  player-card-size" id="card-design-player" style="margin: 5px 5px;">
+                        <header class="card-header is-flex is-justify-content-space-between is-align-items-center"
+                            id="card-header">
+                            <p id="card-title">
+                                <span class="team-name">${player.name}</span>
+                            </p>
+                        </header>
+                        <div>
+                            <div class="content is-flex-direction-column">
+                                <div class="bought-players is-flex is-justify-content-flex-start is-align-items-flex-start"
+                                    style="gap: 10px;margin-bottom: 1em;">
+                                    <p class="block">
+                                        <strong id="card-body" style="color: #0cd5eb !important">Status : </strong>
+                                    </p>
+                                    <p class="block">${player.status}</p>
+                                </div>
+                                <hr style="margin-top: -20px;">
+                                <div class="bought-players is-flex is-justify-content-flex-start is-align-items-flex-start"
+                                    style="gap: 10px;margin-bottom: 1em;">
+                                    <p class="block">
+                                        <strong id="card-body" style="color: #0cd5eb !important">Category : </strong>
+                                    </p>
+                                    <p class="block">
+                                        <strong id="card-body">${player.category}</strong>
+                                    </p>
+                                    <img src="assets/wicketkeeper.png" alt="wicketkeeper" style="width: 1.5rem;">
+                                </div>
+                                <hr style="margin-top: -20px;">
+
+                                <div class="bought-players is-flex is-justify-content-flex-start is-align-items-baseline"
+                                    style="gap: 10px;margin-bottom: 1em;">
+                                    <p class="block">
+                                        <strong id="card-body" style="color: #0cd5eb !important">Player Team : </strong>
+                                    </p>
+                                    <p class="block">
+                                        <strong id="card-body">${player.playerTeam}</strong>
+                                    </p>
+
+                                </div>
+                            </div>
+                            <hr style="margin-top: -20px;">
+
+                            <div class="is-flex is-justify-content-flex-start is-align-items-start"
+                                style="gap: 10px;margin-bottom: 1em;">
+                                <p class="block">
+                                    <strong id="card-body" style="color: #0cd5eb !important">Player Price : ₹</strong>
+                                </p>
+                                <p class="block">
+                                    <strong id="card-body">${player.playerPrice.toLocaleString('en-IN')}</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+          `;     
+        }
+        else{
+            playerCard.innerHTML = `
+            <div class="column card  player-card-size" id="card-design-player" style="margin: 5px 5px;">
+                        <header class="card-header is-flex is-justify-content-space-between is-align-items-center"
+                            id="card-header">
+                            <p id="card-title">
+                                <span class="team-name">${player.name}</span>
+                            </p>
+                        </header>
+                        <div>
+                            <div class="content is-flex-direction-column">
+                                <div class="bought-players is-flex is-justify-content-flex-start is-align-items-flex-start"
+                                    style="gap: 10px;margin-bottom: 1em;">
+                                    <p class="block">
+                                        <strong id="card-body" style="color: #0cd5eb !important">Status : </strong>
+                                    </p>
+                                    <p class="block">${player.status}</p>
+                                </div>
+                                <hr style="margin-top: -20px;">
+                                <div class="bought-players is-flex is-justify-content-flex-start is-align-items-flex-start"
+                                    style="gap: 10px;margin-bottom: 1em;">
+                                    <p class="block">
+                                        <strong id="card-body" style="color: #0cd5eb !important">Category : </strong>
+                                    </p>
+                                    <p class="block">
+                                        <strong id="card-body">${player.category}</strong>
+                                    </p>
+                                    <img src="https://cdn-icons-png.flaticon.com/128/1099/1099680.png" id="ball" alt="ball"
+                                    style="width: 0.9em;">
+                            <svg id="bat" viewBox="0 0 460.84737 460.84737" xmlns="http://www.w3.org/2000/svg"
+                                    style="width: 1.5em;margin-left: -5px">
+                                    <path
+                                        d="m460.847656 31.75-25.070312 25.078125-31.761719-31.757813 25.082031-25.070312zm0 0"
+                                        fill="#a85d5d" />
+                                    <path
+                                        d="m378.945312 50.140625 25.070313-25.070313 31.761719 31.757813-25.070313 25.070313zm0 0"
+                                        fill="#7f4545" />
+                                    <path
+                                        d="m353.878906 75.210938 25.066406-25.070313 31.761719 31.757813-25.070312 25.070312zm0 0"
+                                        fill="#a85d5d" />
+                                    <path
+                                        d="m328.808594 100.28125 25.066406-25.070312 31.761719 31.757812-25.070313 25.070312zm0 0"
+                                        fill="#7f4545" />
+                                    <path
+                                        d="m360.566406 132.039062-25.078125 25.070313-31.75-31.75 25.070313-25.078125zm0 0"
+                                        fill="#a85d5d" />
+                                    <path
+                                        d="m352.425781 190.320312-260.136719 260.140626c-13.847656 13.847656-36.296874 13.847656-50.140624 0l-31.761719-31.761719c-13.847657-13.84375-13.847657-36.296875 0-50.140625l260.140625-260.136719 25.070312 25.066406-.21875.222657-76.050781 107.808593 107.808594-76.050781.21875-.21875zm0 0"
+                                        fill="#ffd2a6" />
+                                    <path
+                                        d="m327.355469 165.25-.21875.21875-107.808594 76.050781 76.050781-107.808593.21875-.222657zm0 0"
+                                        fill="#7f4545" />
+                                </svg>
+                                </div>
+                                <hr style="margin-top: -20px;">
+
+                                <div class="bought-players is-flex is-justify-content-flex-start is-align-items-baseline"
+                                    style="gap: 10px;margin-bottom: 1em;">
+                                    <p class="block">
+                                        <strong id="card-body" style="color: #0cd5eb !important">Player Team : </strong>
+                                    </p>
+                                    <p class="block">
+                                        <strong id="card-body">${player.playerTeam}</strong>
+                                    </p>
+
+                                </div>
+                            </div>
+                            <hr style="margin-top: -20px;">
+
+                            <div class="is-flex is-justify-content-flex-start is-align-items-start"
+                                style="gap: 10px;margin-bottom: 1em;">
+                                <p class="block">
+                                    <strong id="card-body" style="color: #0cd5eb !important">Player Price : ₹</strong>
+                                </p>
+                                <p class="block">
+                                    <strong id="card-body">${player.playerPrice.toLocaleString('en-IN')}</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+          `;     
+        }
           playerDeckElement.appendChild(playerCard);
       });
   }
@@ -329,13 +526,13 @@ document.addEventListener('DOMContentLoaded', () => {
   .then(response => response.json())
   .then(data => {
       teamData = data;
-      renderTeam(); // Render the initial team data on the webpage
+      renderTeam(teamData); // Render the initial team data on the webpage
 
       const socket = io();
 
       socket.on('data-update', updatedData => {
           teamData = updatedData;
-          renderTeam();
+          renderTeam(teamData);
       });
   })
   .catch(error => {
