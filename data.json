@@ -3,7 +3,7 @@
       "teamName": "Team 1",
       "teamFunds": "10000000",
       "batsmen": [
-        { "playerName": "", "playerPrice": "" },
+        { "playerName": "Hardik Pandya", "playerPrice": "1000000" },
         { "playerName": "", "playerPrice": "" },
         { "playerName": "", "playerPrice": "" }
         

@@ -3,14 +3,14 @@
         "name": "AARON FINCH",
         "category": "Batsman",
         "status": "Unsold",
-        "playerTeam": "",
-        "playerPrice": ""
+        "playerTeam": "Team 1",
+        "playerPrice": "1000000"
     },
     {
         "name": "DEVON CONWAY",
         "category": "Batsman",
         "status": "Unsold",
-        "playerTeam": "",
+        "playerTeam": "Team 3",
         "playerPrice": ""
     },
     {

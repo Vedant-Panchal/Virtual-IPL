@@ -2,14 +2,12 @@ const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
 const fs = require('fs');
-
 const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 
 const PORT = process.env.PORT || 3000;
 
-// Serve the main.html and data.json files
 app.use(express.static(__dirname));
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/main.html');
@@ -17,15 +15,24 @@ app.get('/', (req, res) => {
 app.get('/data.json', (req, res) => {
   res.sendFile(__dirname + '/data.json');
 });
+app.get('/playerData.json', (req, res) => {
+  res.sendFile(__dirname + '/playerData.json');
+});
 
 io.on('connection', (socket) => {
   console.log('A client connected.');
 
-  // Listen for changes to data.json and emit the updates to the clients
   fs.watchFile(__dirname + '/data.json', (curr, prev) => {
     fs.readFile(__dirname + '/data.json', 'utf-8', (err, data) => {
       if (err) throw err;
-      io.emit('data-update', JSON.parse(data));
+      io.emit('team-update', JSON.parse(data));
+    });
+  });
+
+  fs.watchFile(__dirname + '/playerData.json', (curr, prev) => {
+    fs.readFile(__dirname + '/playerData.json', 'utf-8', (err, data) => {
+      if (err) throw err;
+      io.emit('player-update', JSON.parse(data));
     });
   });
 

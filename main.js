@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let teamData;
     let playerData;
 
-    function renderTeam() {
+    function renderTeam(teamData) {
         teamGroupElement.innerHTML = '';
 
         teamData.forEach((team, index) => {
@@ -516,40 +516,43 @@ document.addEventListener('DOMContentLoaded', () => {
       return isNaN(parsedPrice) ? 0 : parsedPrice;
   }
    
-  // Fetch team data from data.json
-  fetch('/data.json')
+  // main.js
+const socket = io();
+
+// Fetch team data from data.json
+fetch('/data.json')
   .then(response => response.json())
   .then(data => {
-      teamData = data;
-      renderTeam(teamData); // Render the initial team data on the webpage
+    const teamData = data;
+    renderTeam(teamData); // Replace 'renderTeam' with your rendering function
+    console.log("Socket is connected for team data!");
 
-      const socket = io();
-
-      socket.on('data-update', updatedData => {
-          teamData = updatedData;
-          renderTeam(teamData);
-      });
+    socket.on('team-update', updatedData => {
+      console.log("Received team update from server!", updatedData);
+      renderTeam(updatedData); // Replace 'renderTeam' with your rendering function
+    });
   })
   .catch(error => {
-      console.error('Error fetching data:', error);
+    console.error('Error fetching team data:', error);
   });
 
-  fetch('/playerData.json') // Fetch player data from playerData.json
+// Fetch player data from playerData.json
+fetch('/playerData.json')
   .then(response => response.json())
   .then(data => {
-      playerData = data;
-      renderPlayerDeck(playerData); // Render the initial player data on the webpage
+    const playerData = data;
+    renderPlayerDeck(playerData); // Replace 'renderPlayerDeck' with your rendering function
+    console.log("Socket is connected for player data!");
 
-      const socket = io();
-
-      socket.on('player-update', updatedPlayerData => {
-          playerData = updatedPlayerData;
-          renderPlayerDeck(playerData);
-      });
+    socket.on('player-update', updatedPlayerData => {
+      console.log("Received player update from server!", updatedPlayerData);
+      renderPlayerDeck(updatedPlayerData); // Replace 'renderPlayerDeck' with your rendering function
+    });
   })
   .catch(error => {
-      console.error('Error fetching player data:', error);
+    console.error('Error fetching player data:', error);
   });
+
 
   // Add event listener for player search
   const playerSearchInput = document.getElementById('playerSearch');
