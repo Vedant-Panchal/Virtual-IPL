@@ -523,7 +523,7 @@ const socket = io();
 fetch('/data.json')
   .then(response => response.json())
   .then(data => {
-    const teamData = data;
+    teamData = data;
     renderTeam(teamData); // Replace 'renderTeam' with your rendering function
     console.log("Socket is connected for team data!");
 
@@ -540,7 +540,7 @@ fetch('/data.json')
 fetch('/playerData.json')
   .then(response => response.json())
   .then(data => {
-    const playerData = data;
+    playerData = data;
     renderPlayerDeck(playerData); // Replace 'renderPlayerDeck' with your rendering function
     console.log("Socket is connected for player data!");
 
